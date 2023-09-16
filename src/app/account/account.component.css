@@ -1,0 +1,181 @@
+.flex-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 1.75rem; 
+    font-weight: 350; 
+    letter-spacing: 0.05em; 
+    text-align: center;
+}
+
+.account-container {
+    padding: 2rem; 
+    width: 70%; 
+}
+
+form {
+    max-height: 100%;
+    padding: 1rem; 
+    margin: 1rem 2rem;     
+    background-color: #fff;
+    border-radius: 0.375rem; 
+    border-top-width: 2px; 
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
+}
+
+h1 {
+    font-size: 1.25rem;
+    line-height: 1.75rem; 
+    font-weight: 500; 
+    text-align: center; 
+    text-transform: uppercase; 
+}
+
+.name {
+    display: flex; 
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;   
+    margin-left: -0.75rem;
+    margin-right: -0.75rem; 
+    flex-wrap: wrap; 
+}
+
+.email {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    width: 100%;      
+}
+
+.birth-date, .address {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.name-inputs {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; 
+    margin-bottom: 1.5rem; 
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .name-inputs {
+        margin-bottom: 0; 
+        width: 50%; 
+    }
+}
+
+.passwords-inputs-container, .birth-date-inputs-container {
+    display: flex; 
+    margin-bottom: 0.5rem; 
+    margin-left: -0.75rem;
+    margin-right: -0.75rem; 
+    flex-wrap: wrap; 
+}
+
+.address-first-row-inputs {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; 
+    width: 100%; 
+}
+
+@media (min-width: 768px) { 
+    .address-first-row-inputs {
+        width: 50%; 
+    }
+}
+
+.address-inputs {
+    display: flex; 
+    margin-bottom: 0.5rem; 
+    margin-left: -0.75rem;
+    margin-right: -0.75rem; 
+    flex-wrap: wrap; 
+}
+
+.birth-date-inputs, .address-second-row-inputs, .passwords-inputs {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem; 
+    width: 100%; 
+}
+
+@media (min-width: 768px) { 
+    .birth-date-inputs, .address-second-row-inputs, .passwords-inputs {
+        width: 33.333333%;  
+    } 
+   }
+
+input, select {
+    padding: 0.5rem; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    line-height: 1.25; 
+    width: 100%; 
+    border-radius: 0.25rem; 
+    border-width: 1px; 
+}
+
+select {
+    display: block; 
+    appearance: none; 
+}
+
+.label-title {
+    display: block; 
+    margin-bottom: 0.5rem; 
+    color: #374151; 
+    font-size: 0.75rem;
+    line-height: 1rem; 
+    font-weight: 500; 
+    letter-spacing: 0.025em; 
+    text-transform: uppercase; 
+}
+
+.label-error {
+    margin-bottom: 0.5rem; 
+    color: #B91C1C; 
+    font-size: 0.75rem;
+    line-height: 1rem; 
+    font-weight: 500; 
+}
+
+svg {
+    width: 1rem; 
+    height: 1rem; 
+    fill: currentColor; 
+}
+
+.svg-container {
+    display: flex; 
+    position: absolute; 
+    top: 0;
+    bottom: 0; 
+    right: 0; 
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; 
+    color: #374151; 
+    align-items: center; 
+    pointer-events: none; 
+}
+
+button {
+    padding: 0.5rem; 
+    background-color: #0062FF; 
+    color: #ffffff; 
+    width: 100%; 
+    border-radius: 0.25rem; 
+    text-transform: uppercase; 
+    font-size: 0.75rem;
+    line-height: 1rem; 
+    font-weight: 500; 
+    letter-spacing: 0.025em; 
+  }
+  
+  button:hover {
+    background-color: #31DAFF; 
+    text-shadow: 0 0 3px #555;
+    text-decoration: underline;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+

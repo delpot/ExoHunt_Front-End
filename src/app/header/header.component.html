@@ -1,0 +1,26 @@
+<nav>
+
+  <div class="title">
+    <a href="/">
+      <p class="logo">| E X O H U N T</p>
+      <p class="tagline">Explore Universe, contribute in Science.</p>
+    </a>
+  </div>
+
+  <div class="menu" [class.active]="menuActive">
+
+    <button class="button-burger" [class.not-active]="menuClicked" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul>
+      <li><a routerLink="/catalog">Catalog</a></li>
+      <li><a routerLink="/contribute">Contribute</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="/account">Account</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="/" (click)="logout()">Logout</a></li>
+    </ul>
+    
+  </div>
+</nav>

@@ -1,0 +1,227 @@
+<div class="flex-account">
+    <div class="account-container">
+
+        <h1>Mon compte</h1>
+
+        <form 
+            [formGroup]="updateInformationForm"
+            (ngSubmit)="onSubmitInformation()"
+        >
+
+            <div class="name">
+                <div class="name-inputs">
+                    <label 
+                        for="firstname"
+                        class="label-title" 
+                    >
+                        Prénom
+                    </label>
+                    <input
+                        id="firstname"
+                        type="text"
+                        [placeholder]="updateAccountDto.firstname"
+                        formControlName="firstname"
+                    />
+                </div>
+            
+                <div class="name-inputs">
+                    <label 
+                        for="lastname"
+                        class="label-title" 
+                    >
+                        Nom
+                    </label>
+                    <input
+                        type="text"
+                        id="lastname"
+                        [placeholder]="updateAccountDto.lastname"
+                        formControlName="lastname"
+                    />
+                </div>
+            </div>
+    
+            <div class="email">
+                <label 
+                    for="email"
+                    class="label-title" 
+                    >
+                    E-mail
+                </label>
+                <input
+                    id="email"
+                    type="email"
+                    [placeholder]="updateAccountDto.email"
+                    formControlName="email"
+                />
+                <label 
+                    *ngIf="invalidEmail"
+                    class="label-error" 
+                    >
+                    Email invalide.
+                </label>
+            </div>
+    
+            <div class="birth-date">
+            <label 
+                for="dateOfBirth"
+                class="label-title" 
+                >
+                Date de naissance
+            </label>
+                <input 
+                    id="dateOfBirth"
+                    type="text" 
+                    [placeholder]="updateAccountDto.dateOfBirth"
+                    onfocus="(this.type='date')"
+                    formControlName="dateOfBirth"
+                />
+            </div>
+    
+            <div class="address">
+                <label 
+                    for="address"
+                    class="label-title" 
+                    >
+                    Adresse
+                </label>
+                <div class="address-inputs">
+                    <div class="address-first-row-inputs">
+                        <input
+                            id="addressLine1"
+                            type="text"
+                            [placeholder]="updateAccountDto.addressLine1"
+                            formControlName="addressLine1"
+                        />
+                    </div>
+                
+                    <div class="address-first-row-inputs">
+                        <input
+                            id="addressLine2"
+                            type="text"
+                            [placeholder]="updateAccountDto.addressLine2"
+                            formControlName="addressLine2"
+                        />
+                    </div>
+                </div>
+            
+                <div class="address-inputs">
+                    <div class="address-second-row-inputs">
+                        <input 
+                            id="postalCode" 
+                            type="text" 
+                            [placeholder]="updateAccountDto.postalCode"
+                            formControlName="postalCode"
+                        >
+                    </div>
+            
+                    <div class="address-second-row-inputs">
+                        <input 
+                            id="city" 
+                            type="text" 
+                            [placeholder]="updateAccountDto.city"
+                            formControlName="city"
+                            class="appearance-none block" 
+                        >
+                    </div>
+            
+                    <div class="address-second-row-inputs">
+                        <div class="relative">
+                            <select 
+                                id="country"
+                                formControlName="country"
+                            >
+                                <option selected>{{updateAccountDto.country}}</option>
+                                <option *ngFor="let country of countries">{{country}}</option>
+                            </select>
+                            <div class="svg-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <button type="submit">
+            Enregistrer les modifications
+        </button>
+
+      </form>
+
+      <form
+        [formGroup]="updatePasswordForm"
+        (ngSubmit)="onSubmitPassword(updatePasswordForm.get('newPassword'))"
+      >
+
+        <div class="passwords">
+            <label 
+              for="password"
+              class="label-title"
+            >
+              Mot de passe
+            </label>
+            <div class="passwords-inputs-container">
+              <div class="passwords-inputs">
+                <input
+                  id="oldPassword"
+                  type="password"
+                  placeholder="Ancien mot de passe"
+                  formControlName="oldPassword"
+                />
+              </div>
+          
+              <div class="passwords-inputs">
+                <input
+                  id="newPassword"
+                  type="password"
+                  placeholder="Nouveau mot de passe"
+                  formControlName="newPassword"
+                />
+              </div>
+
+              <div class="passwords-inputs">
+                <button>
+                    Modifier mon mot de passe
+                </button>
+              </div>
+            </div>
+            <label 
+                *ngIf="missingFields"
+                class="label-error" 
+                >
+                Merci de remplir ces deux champs.
+            </label>
+            <label 
+                *ngIf="wrongPassword"
+                class="label-error" 
+                >
+                Ancien mot de passe incorrect.
+            </label>
+            <label 
+                *ngIf="invalidPassword"
+                class="label-error" 
+                >
+                Le mot de passe doit contenir: <br>
+                - Entre 7 et 15 caractères <br>
+                - Au moins un chiffre (0-9) <br>
+                - Au moins un caractère spécial (!@#$%^&*)
+            </label>
+            <label 
+                *ngIf="userNotFound"
+                class="label-error" 
+                >
+                Utilisateur introuvable.
+            </label>
+            <label 
+                *ngIf="updatePasswordError"
+                class="label-error" 
+                >
+                Une erreur est survenue.
+            </label>
+
+        </div>
+
+      </form>
+
+    </div>
+  
+</div>
