@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RegisterForm } from '../../models/register-form.interface';
 import {
   AbstractControl,
@@ -43,6 +43,8 @@ export class RegisterComponent {
   existingUser: boolean = false;
   passwordsNotMatching: boolean = false;
   authError: boolean = false;
+  member: boolean = false;
+  @Output() memberChange = new EventEmitter<boolean>();
 
   constructor(
     private authService: AuthService,
@@ -288,5 +290,10 @@ export class RegisterComponent {
         console.log(`${err.statusText}: ${err.error.message}`);
       },
     });
+  }
+
+  toggleMember() {
+    this.member = !this.member;
+    this.memberChange.emit(this.member);
   }
 }

@@ -13,4 +13,7 @@
         </p>
     </div>
 
+    <app-login *ngIf="!isLoggedIn && member" (memberChange)="onMemberChange($event)"></app-login>
+    <app-register *ngIf="!isLoggedIn && !member" (memberChange)="onMemberChange($event)"></app-register>
+    <!-- <app-contribute *ngIf="isLoggedIn"></app-contribute> -->
 </div>

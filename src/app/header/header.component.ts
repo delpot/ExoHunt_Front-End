@@ -18,7 +18,7 @@ export class HeaderComponent {
     this.authService.clearToken();
     this.authService.clearUserId();
     this.isLoggedIn = false;
-    this.router.navigate(['/login']).then(() => window.location.reload());
+    this.router.navigate(['/']).then(() => window.location.reload());
   }
 
   toggleMenu() {

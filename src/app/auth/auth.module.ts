@@ -9,5 +9,6 @@ import { AuthService } from './auth.service';
   declarations: [LoginComponent, RegisterComponent],
   providers: [AuthService],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  exports: [LoginComponent, RegisterComponent],
 })
 export class AuthModule {}

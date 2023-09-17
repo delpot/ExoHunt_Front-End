@@ -1,11 +1,9 @@
 .login-container {
-    position: relative;
-}
-
-video {
-    display: block;
+    position: absolute;
     width: 100%;
-    margin-top: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .form {
@@ -42,7 +40,7 @@ a {
 }
 
 a:hover {
-    color: #ffffff;
+    color: #000000;
     transform: scale(1.1);
 }
 

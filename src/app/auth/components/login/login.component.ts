@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LoginForm } from '../../models/login-form.interface';
 import { AuthService } from '../../auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -16,6 +16,8 @@ export class LoginComponent {
   missingFields: boolean = false;
   wrongCredentials: boolean = false;
   authError: boolean = false;
+  member: boolean = true;
+  @Output() memberChange = new EventEmitter<boolean>();
 
   constructor(
     private authService: AuthService,
@@ -66,5 +68,10 @@ export class LoginComponent {
         console.log(`${err.statusText}: ${err.error.message}`);
       },
     });
+  }
+
+  toggleMember() {
+    this.member = !this.member;
+    this.memberChange.emit(this.member);
   }
 }

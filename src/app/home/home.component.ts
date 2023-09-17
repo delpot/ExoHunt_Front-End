@@ -5,6 +5,7 @@ import {
   HostListener,
   ViewChild,
 } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,10 @@ import {
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('videoElement') videoElement!: ElementRef;
+  isLoggedIn: boolean = this.authService.isLoggedIn();
+  member: boolean = true;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private authService: AuthService) {}
 
   ngAfterViewInit(): void {
     const video: HTMLVideoElement = this.videoElement.nativeElement;
@@ -42,5 +45,9 @@ export class HomeComponent implements AfterViewInit {
         }
       }
     }
+  }
+
+  onMemberChange(newMemberValue: boolean) {
+    this.member = newMemberValue;
   }
 }
